@@ -1,0 +1,62 @@
+<app-header></app-header>
+<div class="container">
+<div class="card marTop2">
+  <h3>Filters</h3>
+    <form >
+      <div class="row">
+        <div class=" col-lg-3 col-md-3 col-sm-6 col-xs-12" >
+          <label for="usr">Name</label>
+          <input type="text" name="nameFilter" class="form-control" [(ngModel)]="name" id="usr" (ngModelChange)="filter('name')">
+        </div>
+        <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
+          <label for="gen">Gender</label>
+          <select class="form-control" id="gen" name="genderFilter"  (change)="filter('gender')"  [(ngModel)]="gender">
+              <option value="male">Male</option>
+              <option value= "female">Female</option>
+              <option value="n/a">N/A<option>
+            </select>
+          <!-- <input type="text" name="genderFilter" class="form-control"  [(ngModel)]="gender" id="gen" (ngModelChange)="filter('gender')"> -->
+        </div>
+        <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <label for="DOB">Birth Year</label>
+            <input type="text" name="BODFilter" class="form-control"  [(ngModel)]="year" id="DOB" (ngModelChange)="filter('year')">
+          </div>
+          <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
+              <label for="film">Film Name</label>
+              <input type="text" name="filmNameFilter" class="form-control"  [(ngModel)]="film" id="film" (ngModelChange)="filter('film')">
+            </div>
+        </div>
+      </form>
+</div>
+<div class="card">
+  <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+      <button class="col-lg-2 col-md-2 col-sm-2 col-xs-12 .btn-info right"(click)="resetFilters()">Reset Filters</button>
+  </div>
+ 
+<div class=" table-responsive">
+<table class="table" *ngIf="finalData.length > 0">
+  <thead>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>Birth Year</th>
+      <th>Films</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let details of finalData">
+      <td>{{details.name}}</td>
+      <td>{{details.gender}}</td>
+      <td>{{details.birth_year}}</td>
+      <td *ngFor="let film of details.filmList">
+       {{film}}
+     
+      </td>
+
+        </tr>
+  </tbody>
+ 
+</table>
+<p *ngIf="finalData.length == 0">Sorry! No Data Found</p>
+</div>
+</div>
+</div>
+

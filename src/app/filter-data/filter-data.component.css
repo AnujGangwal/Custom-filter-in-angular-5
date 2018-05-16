@@ -1,0 +1,52 @@
+/* .container{
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 960px;
+    padding: 0 20px;
+    position: relative;
+    width: 100%;
+} */
+
+.card{
+    background: #FFF;
+    -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05), 0 1px 1px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05), 0 1px 1px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(0, 0, 0, 0.05);
+    border-radius: 2px;
+    padding: 18px;
+    width: 100%;
+    margin-bottom: 5%;
+}
+.card:empty::before {
+    content: "\1F44B Oh snap\0021  Are you lost\003F";
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    color: #222;
+  }
+  .card:empty::after {
+    content: "Keep calm\002C  light a fire\002C  and refresh to try again\2026";
+    display: block;
+    font-size: 1.4rem;
+    position: relative;
+    text-align: center;
+  }
+  
+  .marTop2{
+      margin-top: 2%;
+  }
+ .right{
+     float: right
+ }
+
+
+  
